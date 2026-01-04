@@ -31,23 +31,5 @@ git clone https://github.com/<ton-user>/backup-manager
 cd backup-manager
 Modifiez les chemins dans backup.ps1 :
 
-powershell
 $source = "C:\Users\"
-$destination = "D:\Backups\"```
-
-Autorisez l’exécution des scripts PowerShell :
-
-powershell
-Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
-## ▶️ Exécution manuelle
-powershell -File C:\Backups\backup.ps1
-
-⏱️ Exécution automatique (Task Scheduler)
-Créer une tâche planifiée :
-schtasks /create /tn "BackupProjets" /tr "powershell.exe -File C:\Backups\backup.ps1" /sc daily /st 09:00
-
-## 📓 Journalisation
-Chaque exécution ajoute une ligne dans backup.log :
-
-Code
-2026-01-04_09-00 - Backup completed: D:\Backups\Projets\backup_2026-01-04_09-00.zip
+$destination = "D:\Backups\"
